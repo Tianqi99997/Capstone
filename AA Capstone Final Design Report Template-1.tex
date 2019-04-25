@@ -1,0 +1,238 @@
+% `template.tex', a bare-bones example employing the AIAA class.
+%
+% For a more advanced example that makes use of several third-party
+% LaTeX packages, see `advanced_example.tex', but please read the
+% Known Problems section of the users manual first.
+%
+% Typical processing for PostScript (PS) output:
+%
+%  latex template
+%  latex template   (repeat as needed to resolve references)
+%
+%  xdvi template    (onscreen draft display)
+%  dvips template   (postscript)
+%  gv template.ps   (onscreen display)
+%  lpr template.ps  (hardcopy)
+%
+% With the above, only Encapsulated PostScript (EPS) images can be used.
+%
+% Typical processing for Portable Document Format (PDF) output:
+%
+%  pdflatex template
+%  pdflatex template      (repeat as needed to resolve references)
+%
+%  acroread template.pdf  (onscreen display)
+%
+% If you have EPS figures, you will need to use the epstopdf script
+% to convert them to PDF because PDF is a limmited subset of EPS.
+% pdflatex accepts a variety of other image formats such as JPG, TIF,
+% PNG, and so forth -- check the documentation for your version.
+%
+% If you do *not* specify suffixes when using the graphicx package's
+% \includegraphics command, latex and pdflatex will automatically select
+% the appropriate figure format from those available.  This allows you
+% to produce PS and PDF output from the same LaTeX source file.
+%
+% To generate a large format (e.g., 11"x17") PostScript copy for editing
+% purposes, use
+%
+%  dvips -x 1467 -O -0.65in,0.85in -t tabloid template
+%
+% For further details and support, read the Users Manual, aiaa.pdf.
+
+
+% Try to reduce the number of latex support calls from people who
+% don't read the included documentation.
+%
+\typeout{}\typeout{If latex fails to find aiaa-tc, read the README file!}
+%
+
+
+\documentclass[]{aiaa-tc}% insert '[draft]' option to show overfull boxes
+
+\usepackage{xcolor}
+
+ \title{Template for AA Capstone Final Design Report}
+
+ \author{
+  2018 AA 410 AX:  {\em Project Sponsor}
+ }
+
+
+
+ % Data used by 'handcarry' option if invoked
+ \AIAApapernumber{YEAR-NUMBER}
+ \AIAAconference{Conference Name, Date, and Location}
+ \AIAAcopyright{\AIAAcopyrightD{YEAR}}
+
+ % Define commands to assure consistent treatment throughout document
+ \newcommand{\eqnref}[1]{(\ref{#1})}
+ \newcommand{\class}[1]{\texttt{#1}}
+ \newcommand{\package}[1]{\texttt{#1}}
+ \newcommand{\file}[1]{\texttt{#1}}
+ \newcommand{\BibTeX}{\textsc{Bib}\TeX}
+ \newcommand{\reqd}{\textcolor{red}{*}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+%This is a bare-bones \LaTeX\ template of an AIAA technical conference paper.
+%It is intended to demonstrate the bare minimum set of \LaTeX\ commands
+%to produce an AIAA technical conference paper.
+%To explore more \LaTeX\ capabilities, see the advanced example, but
+%first read the Known Problems section of the user manual.
+%For detailed AIAA layout and style guidelines, please refer to the AIAA
+%author guide for paper submission, format, and other procedures.
+This document provides a suggested template for the final reports for the William E. Boeing Department of Aeronautics \& Astronautics Senior Capstone Projects.  Sections with a (\reqd) are required and must be a honest and thoughtful discussion of the topic.\\
+
+Note:  Not all aspects of design or design problems have the same common practices to approach of the solutions.  All of the elements below must appear in the final report, but organization and style of the material should reflect the standard practices of your particular topic area.\\
+
+Please indicate either in a discussion in a separate section (such as in the organization chart section)or with some type of indicator (initials, names) in the section heading for each item which team member(s) prepared that section.
+
+\textcolor{red}{\sc Anyone with a copy of this report should have enough information in hand to replicate your results.}
+\end{abstract}
+
+
+\section*{Nomenclature}
+
+\begin{tabbing}
+  XXX \= \kill% this line sets tab stop
+  $J$ \> Jacobian Matrix \\
+  $f$ \> Residual value vector \\
+  $x$ \> Variable value vector \\
+  $F$ \> Force, N \\
+  $m$ \> Mass, kg \\
+  $\Delta x$ \> Variable displacement vector \\
+  $\alpha$ \> Acceleration, m/s\textsuperscript{2} \\[5pt]
+  \textit{Subscript}\\
+  $i$ \> Variable number \\
+ \end{tabbing}
+
+\section*{Executive Summary}
+
+Provide a summary (2-4 pages) of your project and results with key figures and highlights.  This summary may appear on the course website in the future, so it must be self-contained.  The same points should be addressed as in the introduction, but at a higher level:  problem definition, aerospace context, requirements, design approach, results.
+
+\section*{Project and Team Organization}
+
+Provide a chart of the roles and persons in those roles for the project.  Discuss the process by which roles were assigned to team members and how the roles interacted with one another.  If the project interfaced with another project, please provide details of the management and integration of the projects.
+
+\section{Introduction \reqd}
+
+\subsection{Problem definition \reqd}
+\begin{itemize}
+\item What are you trying to do? Articulate your objectives using absolutely no jargon.  
+\item What is the problem, and why is it important?  
+\item Why is it hard?
+\item How is it done today, and what are the limits of current practice? 
+\item Who cares?
+\end{itemize}
+
+\subsection{Aerospace context \reqd}
+\begin{itemize}
+\item Describe how this problem and its solution are integral to aerospace engineering.  
+\item Describe how the solution of the problem impacts the relevant aerospace applications.
+\end{itemize}
+
+\subsection{Functional requirements/customer specifications \reqd}
+
+\subsection{Design approach, etc. \reqd}
+\begin{itemize}
+\item What's new in your approach and why do you think it will be successful?
+\item Alternative design solutions and justification of the approach selected.\item If you're successful, what difference will it make?   
+\item What impact will success have?  How will it be measured?
+\item What are the risks and the payoffs?
+\item How much will it cost?
+\item How long will it take?
+\item What are the midterm and final "exams" to check for success?  How will progress be measured?
+\end{itemize}
+
+\section{Design}
+
+\subsection{Description}
+\subsection{Analysis}
+
+Results of modeling, computational analysis, or other analysis that support the design.
+\subsubsection{Mechanical}
+\subsubsection{Electrical}
+\subsubsection{Computational}
+\subsubsection{Hardware}
+\subsubsection{Software}
+\subsubsection{Integration}
+
+\section{Prototype}
+\subsection{Purpose}
+\subsection{Description and Implementation}
+\subsection{Manufacturing and Fabrication}
+\subsection{Testing Results}
+Comparisons of experimental performance with the design analysis.  Examples of graphical comparisons between theory and experiment should be described. Figures should be incorporated into the text, must be carefully labeled, and must have {\em complete} captions.
+
+\section{Risk and Liability \reqd}
+
+What are the possible risks associated with the resulting product?  What are the possible routes of failure?  In the event of failures, what might be the results?  Who would be responsible in the event of negative results (end-user, designer, sales company, etc.)?
+
+\section{Ethical Issues \reqd}
+
+Discuss the ethical issues of relevance to the design, testing, production, operation of the product.
+
+\section{Impact on Society \reqd}
+
+Discuss how the design, testing, production, operation of the product will improve or challenge quality of life.
+
+\section{Impact on the Environment \reqd}
+
+Discuss how the design, testing, production, operation of the product will positively or negatively impact the environment.
+
+\section{Cost and Engineering Economics \reqd}
+
+Provide information on the planned and actual budget of the design process.  Discuss the expected costs for prototype refinement and production.
+
+\section{Codes and Standards \reqd}
+
+Discuss all relevant regulatory guidelines that apply to the design, testing, production, operation of the product.
+
+\section{Conclusion \reqd}
+
+Summarize the overall results and discuss next steps in the design, testing or production.  Clearly indicate if the project results satisfied the performance, production, cost and other requirements of the customer.
+
+
+\section*{Acknowledgments}
+
+A place to recognize others who aided with the project.
+
+\begin{thebibliography}{9}% maximum number of references (for label width)
+ \bibitem{rebek:82bk}
+ Rebek, A., {\it Fickle Rocks}, Fink Publishing, Chesapeake, 1982.
+\end{thebibliography}
+
+\appendix
+\section{Appendix - Drawings \reqd}
+%\subsection*{Drawings}
+\begin{enumerate}
+\item Mechanical
+\item Electrical (individual components and connections)
+\item Computer hardware
+\item Software descriptions (flow charts, hierarchical diagrams, etc.)
+\end{enumerate}
+\section{Appendix - Code}
+\begin{enumerate}
+\item MATLAB analysis and design
+\item C-code
+\item Fortran
+\item etc.
+\end{enumerate}
+
+\section{Appendix - Major components list for prototype}
+\begin{enumerate}
+\item Manufacturer
+\item Model/part number
+\item Cost
+\end{enumerate}
+
+\section{Appendix - Other appendices as needed}
+
+
+\end{document}
+
+% - Release $Name:  $ -
